@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc198d947d20ef43bdd36e21c5d1b11, type: 3}
+  m_Name: ArcheryData
+  m_EditorClassIdentifier: 
+  CommonData:
+    Icon: {fileID: 0}
+    Name: 
+    Description: 
+  Status: 2
+  MinBuildersNeeded: 1
+  MaxBuildersAllowed: 3
+  BaseBuildTime: 15
+  BaseRepairTime: 10
+  Initial: {fileID: 4300000, guid: 9018b9e829e697640b479e00dd8fdcc0, type: 3}
+  UnderConstructionMesh: {fileID: 4300000, guid: 27fdd863cab8d1a419f247f4ed7a2b01, type: 3}
+  CompletedMesh: {fileID: 4300000, guid: 7036859d28e2cb84c9948a1fcf49fe95, type: 3}
+  UnderRepairMesh: {fileID: 4300000, guid: 7036859d28e2cb84c9948a1fcf49fe95, type: 3}
+  DestroyedMesh: {fileID: 0}
