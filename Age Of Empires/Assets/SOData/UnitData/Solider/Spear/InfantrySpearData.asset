@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6fb1f52299e4294f94b12e44c99fa6d, type: 3}
+  m_Name: InfantrySpearData
+  m_EditorClassIdentifier: 
+  CommonData:
+    Icon: {fileID: 0}
+    Name: 
+    Description: 
+    maxHealth: 10
+    health: 100
+  speed: 2
+  idleClip: {fileID: 7400000, guid: b77a0151c1c2b6842a830f5bc60644c4, type: 3}
+  moveClip: {fileID: 7400000, guid: e9ff7855f8770f148b154b61073963fb, type: 3}
+  attackClip: {fileID: 7400000, guid: 7ae56d5469e7f334abb22dd37f302bd6, type: 3}
+  dieClip: {fileID: 7400000, guid: 505b2fbca113d954c9b18b1a2e55a117, type: 3}
+  attackPower: {x: 0, y: 0}

@@ -16,7 +16,9 @@ MonoBehaviour:
     Icon: {fileID: 0}
     Name: 
     Description: 
-  Status: 2
+    maxHealth: 100
+    health: 100
+  Status: 4
   MinBuildersNeeded: 1
   MaxBuildersAllowed: 3
   BaseBuildTime: 15
@@ -25,4 +27,5 @@ MonoBehaviour:
   UnderConstructionMesh: {fileID: 4300000, guid: a2bc843dcc7a5be45993257d22444585, type: 3}
   CompletedMesh: {fileID: 4300004, guid: e2f28d7d7478cb64597ebb9077abfe6e, type: 3}
   UnderRepairMesh: {fileID: 4300004, guid: e2f28d7d7478cb64597ebb9077abfe6e, type: 3}
-  DestroyedMesh: {fileID: 0}
+  DestroyedMesh: {fileID: 4300004, guid: e2f28d7d7478cb64597ebb9077abfe6e, type: 3}
+  builderSpacing: 5

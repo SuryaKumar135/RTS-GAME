@@ -22,17 +22,26 @@ namespace RTSGame
         public Mesh UnderRepairMesh;
         public Mesh DestroyedMesh;
 
+        [Header("Builder Placement")]
+        public float builderSpacing = 5f;
+
         public float GetEffectiveBuildTime(int builderCount)
         {
+            if (Status == BuildingStatus.Destroyed || Status == BuildingStatus.UnderRepair)
+            {
+                builderCount = Mathf.Clamp(builderCount, MinBuildersNeeded, MaxBuildersAllowed);
+                return BaseRepairTime / builderCount;
+
+            }
             builderCount = Mathf.Clamp(builderCount, MinBuildersNeeded, MaxBuildersAllowed);
             return BaseBuildTime / builderCount;
         }
 
-        public float GetEffectiveRepairTime(int builderCount)
-        {
-            builderCount = Mathf.Clamp(builderCount, MinBuildersNeeded, MaxBuildersAllowed);
-            return BaseRepairTime / builderCount;
-        }
+        //public float GetEffectiveRepairTime(int builderCount)
+        //{
+        //    builderCount = Mathf.Clamp(builderCount, MinBuildersNeeded, MaxBuildersAllowed);
+        //    return BaseRepairTime / builderCount;
+        //}
     }
 
     public enum BuildingStatus

@@ -1,29 +1,46 @@
 using UnityEngine;
 
-
-
 namespace RTSGame
 {
     public class SelectableObject : MonoBehaviour
     {
-        public MeshRenderer rend;
-        private Color originalColor;
-        [SerializeField] private Color selectedColor = Color.green;
+        [Header("Selection Visuals")]
+        public GameObject selectEffectPrefab;
 
-        public void Awake()
+        public ParticleSystem selectEffectInstance;
+
+        protected virtual void Awake()
         {
-            rend = GetComponent<MeshRenderer>();
-            originalColor = rend.material.color;
+            if (selectEffectPrefab != null)
+            {
+                GameObject effectObject = Instantiate(selectEffectPrefab, transform);
+                effectObject.transform.localPosition = Vector3.zero;
+
+                selectEffectInstance = effectObject.GetComponent<ParticleSystem>();
+
+                if (selectEffectInstance != null)
+                    selectEffectInstance.Stop();
+            }
+            else
+            {
+                Debug.LogWarning($"No selectEffectPrefab assigned on {gameObject.name}");
+            }
         }
 
-        public void OnSelected()
+        public virtual void OnSelected()
         {
-            rend.material.color = selectedColor;
+            if (selectEffectInstance != null)
+                selectEffectInstance.Play();
         }
 
-        public void OnDeselected()
+        public virtual void OnDeselected()
         {
-            rend.material.color = originalColor;
+            if (selectEffectInstance != null)
+            {
+                Debug.LogWarning("Deselect");
+                selectEffectInstance.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            }
         }
+
     }
 }

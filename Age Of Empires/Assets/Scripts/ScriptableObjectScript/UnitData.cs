@@ -1,20 +1,37 @@
-
 using UnityEngine;
 using UnityEngine.AI;
+
 namespace RTSGame
 {
-    [CreateAssetMenu(fileName = "SelectableData", menuName = "RTS/Unit Data")]
+    [CreateAssetMenu(fileName = "UnitData", menuName = "RTS/Unit Data")]
     public class UnitData : ScriptableObject
     {
         public CommonData CommonData;
 
-        public float speed;
+        [Header("Movement")]
+        public float speed = 3.5f;
 
-        //Initialize Data
-        public void InitializeUnitData(UnitBehaviour unitBehaviour)
+        [Header("Animation Clips")]
+        public AnimationClip idleClip;
+        public AnimationClip moveClip;
+        public AnimationClip attackClip;
+        public AnimationClip dieClip;
+
+
+        [Header("Attack Power")]
+        [SerializeField] private Vector2 attackPower;
+
+        public void InitializeUnitData(UnitBehaviour unit)
         {
-            unitBehaviour.GetComponent<NavMeshAgent>().speed = speed;
+            // Movement setup
+            NavMeshAgent agent = unit.GetComponent<NavMeshAgent>();
+            if (agent != null)
+                agent.speed = speed;
+
+            // Animation setup
+            unit.SetAnimationClips(idleClip, moveClip, attackClip, dieClip);
         }
+
+       // public 
     }
 }
-
